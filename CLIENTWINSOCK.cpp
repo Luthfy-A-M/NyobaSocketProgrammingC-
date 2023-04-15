@@ -53,6 +53,16 @@ int main()
         cout << " Client : Can Now Start Sending and Receive Data" << endl;
     }
     //end Connect Socket
+    
+    //startSendDataToServer
+    cout << "Say Halo To Server -> port : " << port << endl;
+    char header[200] = "Halo Server";
+    int sentSize=send(clientSocket, header, 200, 0);
+    if (sentSize>0) {
+        cout << header << " is Successfully Sent to Server"<<endl;
+    }
+    
+    
     system("pause");
     WSACleanup();
     cout << "End of Programs";
