@@ -73,6 +73,19 @@ int main()
         cout << "Accepting ServerSocket By AcceptSocket  is Successfull" << endl;
     }
     //end AcceptSocket PRocedure
+    
+    //receive data 
+    char data[200];
+    int reclen = recv(acceptSocket, data, 200, 0);
+    if (reclen > 0) {
+        cout << "data Received from  client : " << reclen << endl;
+        cout << "Data is : " << data << endl;
+    }
+    else {
+        cout << "Not Receiving ANy Data From CLient" << endl;
+    }
+    //end receive
+    
     cout << "End of Programs";
     return 1;
 }
